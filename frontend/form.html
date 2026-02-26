@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор перевода</title>
+
+    <!-- Tom Select CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
+
+<form id="calcForm" style="max-width:600px;margin:auto;padding:20px;background:#ffffff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+
+    <h3 style="margin-bottom:20px;">Расчёт стоимости перевода</h3>
+
+    <!-- Файл -->
+    <p style="margin-bottom:16px;">
+        <label style="display:block;margin-bottom:6px;font-weight:600;"><strong>📎 Загрузить файл</strong></label>
+        <input type="file" name="file" accept=".txt,.doc,.docx,.xls,.xlsx,.pdf,.ppt,.pptx" required style="width:100%;padding:10px;border:1px solid #d1d5db;border-radius:6px;font-size:14px;">
+    </p>
+
+    <!-- Язык оригинала -->
+    <p style="margin-bottom:16px;">
+        <label style="display:block;margin-bottom:6px;font-weight:600;"><strong>🌐 Язык оригинала</strong></label>
+        <select id="src_lang" name="src_lang" style="width:100%;padding:10px;border:1px solid #d1d5db;border-radius:6px;font-size:14px;">
+            <option value="">Выберите язык</option>
+        </select>
+    </p>
+
+    <!-- Кнопка смены -->
+    <div style="text-align:center;margin:20px 0;">
+        <button type="button" id="swapLangs" style="padding:10px 20px;border-radius:8px;border:1px solid #d1d5db;background:#f3f4f6;font-weight:500;cursor:pointer;transition:background 0.2s;">
+            🔄 Поменять местами
+        </button>
+    </div>
+
+    <!-- Язык перевода -->
+    <p style="margin-bottom:16px;">
+        <label style="display:block;margin-bottom:6px;font-weight:600;"><strong>🎯 Язык перевода</strong></label>
+        <select id="tgt_lang" name="tgt_lang" style="width:100%;padding:10px;border:1px solid #d1d5db;border-radius:6px;font-size:14px;">
+            <option value="">Выберите язык</option>
+        </select>
+    </p>
+
+    <button type="submit" style="width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:8px;font-weight:bold;font-size:16px;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+        🔢 Рассчитать стоимость
+    </button>
+
+</form>
+
+<!-- РЕЗУЛЬТАТ -->
+<div id="result" style="margin-top:30px;"></div>
+
+<!-- Tom Select JS -->
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+
+<!-- 🔥 НАШ JS (замените путь на свой) -->
+<script src="./js/calc_form.js"></script>
+
+</body>
+</html>
